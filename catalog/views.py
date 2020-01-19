@@ -3,6 +3,30 @@ from .models import Good, Maincategory, Category, People, Order
 from django.views.generic import ListView, DetailView
 
 
+
+class Catalog(ListView):
+    model = Category
+    template_name = "base_catalog.html"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 class GoodListView(ListView):
     model = Good
     template_name = "good_list.html"

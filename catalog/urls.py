@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
 
 
-    url(r'^catalog/$', views.CatListView.as_view(), name='category'),
+    url(r'^catalog/$', views.Catalog.as_view(), name='catalog'),
 
 
     # url(r'^goods/$', views.GoodListView.as_view(), name='goods'),
