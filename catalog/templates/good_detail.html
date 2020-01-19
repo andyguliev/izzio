@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+
+  <h1>Товар: {{ good.name}} </h1>  
+  <h1>Пользователь: {{ good.people }} </h1>
+
+
+
+    ~~~~~~~~~~~
+
+
+  {% for order in good.order_set.all %}
+         <h3><li>{{ order.name }}</li></h3>
+  {% endfor %}
+
+    ~~~~~~~~~~~
+
+
+  {% for good in good.order_set.all %}
+         <h3><li>{{ good.people }}</li></h3>
+  {% endfor %}
+
+    ~~~~~~~~~~~
+
+  </div>
+{% endblock %}

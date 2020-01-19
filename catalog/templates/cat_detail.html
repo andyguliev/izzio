@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Категория: {{ order.name}} </h1>
+
+  <!-- <p><strong>Description:</strong> <p>{{ good.decs}} {{ good.price}}</a></p> author detail link not yet defined
+  <p><strong>Категория:</strong>{{good.category}}</p> -->
+ 
+
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Товары:</h4>
+
+    ~~~~~~~~~~~
+  
+     {% for category in category.good_set.all %}
+         <li>{{ category.name }}</a></li>
+     {% endfor %}
+
+    ~~~~~~~~~~~
+
+     
+    
+  </div>
+{% endblock %}

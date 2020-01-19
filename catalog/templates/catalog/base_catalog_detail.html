@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+
+      
+
+
+{% block content %}
+
+{% for good in category.good_set.all %}
+  
+                   
+<div class="col-sm-6 col-md-4">
+			<div class="products">
+				
+	<div class="product">		
+		<div class="product-image">
+			<div class="image">
+				<a href="{{ good.get_absolute_url }}"><img  src="{{ good.photo.url }}" data-echo="{{ good.photo.url }}" alt="" style="width:270px;height:270px;"></a>
+			</div><!-- /.image -->			
+
+         
+
+			<div class="tag new"><span>new</span></div>                        		   
+		</div><!-- /.product-image -->
+			
+		
+		<div class="product-info text-left">
+			<h3 class="name"><a href="{{ order.get_absolute_url }}">{{ good.name }}</a></h3>
+
+           
+
+			<div class="rating rateit-small"></div>
+			<div class="description"></div>
+
+			<div class="product-price">	
+				<span class="price">
+					$650.99				</span>
+										     <span class="price-before-discount">$ 800</span>
+									
+			</div><!-- /.product-price -->
+			
+		</div><!-- /.product-info -->
+					<div class="cart clearfix animate-effect">
+				<div class="action">
+								
+					<button class="btn btn-primary" type="button">Add to cart</button>
+					<button class="left btn btn-primary" type="button"><i class="icon fa fa-heart"></i></button>
+					<button class="left btn btn-primary" type="button"><i class="fa fa-retweet"></i></button>						
+
+		                
+					
+				</div><!-- /.action -->
+			</div><!-- /.cart -->
+			</div><!-- /.product -->
+      
+			</div><!-- /.products -->
+		</div><!-- /.item -->
+	
+  {% endfor %}
+
+
+
+
+{% endblock %}
+
+

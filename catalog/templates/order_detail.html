@@ -1,0 +1,25 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+
+
+
+  <h1>Заказ: {{ order.name}} </h1>  
+  <h1>Пользователь: {{ order.people}} </h1>
+
+
+
+    ~~~~~~~~~~~
+
+
+   {% for order in order.good.all %} 
+    <h3>Товар: {{ order.name }} </h3>
+  {% endfor %}
+  
+
+    ~~~~~~~~~~~
+
+
+
+  </div>
+{% endblock %}
