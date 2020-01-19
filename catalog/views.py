@@ -3,10 +3,74 @@ from .models import Good, Maincategory, Category, People, Order
 from django.views.generic import ListView, DetailView
 
 
+#~~~~~~~~~~~~~~~~~  КАТАЛОГ  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class Catalog(ListView):
-    model = Category
+    model = Good
     template_name = "base_catalog.html"
+
+    @staticmethod
+    def all_goods():
+        return Good.objects.all()
+
+    @staticmethod
+    def all_maincat():
+        return Maincategory.objects.all()
+
+
+    @staticmethod
+    def all_category():
+        return Category.objects.all()
+
+
+
+#~~~~~~~~~~~~~~~~~  SUB КАТАЛОГ  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+class CatalogDetail(DetailView):
+    model = Category
+    template_name = "base_catalog_detail.html"
+
+    @staticmethod
+    def all_goods():
+        return Good.objects.all()
+
+    @staticmethod
+    def all_maincat():
+        return Maincategory.objects.all()
+
+
+    @staticmethod
+    def all_category():
+        return Category.objects.all()
+
+
+
+#~~~~~~~~~~~~~~~~~  КАРТОЧКА ТОВАРА  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+
+class GoodDetail(DetailView):
+    model = Good
+    template_name = "base_detail.html"
+
+    @staticmethod
+    def all_goods():
+        return Good.objects.all()
+
+    @staticmethod
+    def all_maincat():
+        return Maincategory.objects.all()
+
+
+    @staticmethod
+    def all_category():
+        return Category.objects.all()
+
+
+
+
 
 
 

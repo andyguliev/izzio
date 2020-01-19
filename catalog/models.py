@@ -33,7 +33,7 @@ class Category(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('category-detail', args=[str(self.id)])
+        return reverse('catalog_detail', args=[str(self.id)])
 
 
 
@@ -41,6 +41,7 @@ class Good(models.Model):
     name = models.CharField(max_length=200)
     decs = models.CharField(max_length=200)
     price = models.CharField(max_length=200)
+    photo = models.ImageField(upload_to="image")
     category = models.ForeignKey(Category, on_delete=models.SET_NULL, null=True)
     
 
@@ -48,7 +49,7 @@ class Good(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('detail', args=[str(self.id)])
+        return reverse('good_detail', args=[str(self.id)])
 
 
 

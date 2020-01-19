@@ -8,6 +8,10 @@ urlpatterns = [
 
 
     url(r'^catalog/$', views.Catalog.as_view(), name='catalog'),
+    url(r'^catalog/(?P<pk>\d+)$', views.CatalogDetail.as_view(), name='catalog_detail'),
+
+    url(r'^goods/(?P<pk>\d+)$', views.GoodDetail.as_view(), name='good_detail'),
+
 
 
     # url(r'^goods/$', views.GoodListView.as_view(), name='goods'),
