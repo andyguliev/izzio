@@ -1,5 +1,5 @@
 from django.shortcuts import render
-from .models import Good, Category, People, Order
+from .models import Good, Maincategory, Category, People, Order
 from django.views.generic import ListView, DetailView
 
 
