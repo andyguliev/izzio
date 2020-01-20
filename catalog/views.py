@@ -3,6 +3,31 @@ from .models import Good, Maincategory, Category, People, Order
 from django.views.generic import ListView, DetailView
 
 
+
+#~~~~~~~~~~~~~~~~~  MAIN - КАТАЛОГ  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+class MainCatalogDetail(DetailView):
+    model = Maincategory
+    template_name = "base_main_catalog_detail.html"
+
+
+    @staticmethod
+    def all_goods():
+        return Good.objects.all()
+
+   
+    @staticmethod
+    def all_category():
+        return Category.objects.all()
+
+
+    @staticmethod
+    def all_maincat():
+        return Maincategory.objects.all()
+
+
+
 #~~~~~~~~~~~~~~~~~  КАТАЛОГ  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 class Catalog(ListView):

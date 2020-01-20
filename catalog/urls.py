@@ -3,8 +3,14 @@ from . import views
 from django.conf.urls import url
 
 
+
+
 urlpatterns = [
     url(r'^$', views.IndexView.as_view(), name='index'),
+
+
+    url(r'^maincatalog/(?P<pk>\d+)$', views.MainCatalogDetail.as_view(), name='main_catalog_detail'),
+
 
 
     url(r'^catalog/$', views.Catalog.as_view(), name='catalog'),

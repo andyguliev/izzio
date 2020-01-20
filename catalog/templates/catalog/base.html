@@ -407,7 +407,7 @@
 
            <li class="dropdown">
 				
-				<a href="">{{ item.name }}
+				<a href="{{ item.get_absolute_url }}">{{ item.name }}
 				   <span class="menu-label hot-menu hidden-xs">hot</span>
 				</a>
 			</li>
@@ -532,7 +532,7 @@
 
 
 
-		  {% for item in view.all_category %}
+		  {% for item in maincategory.category.all %}
 		  
                <div class="accordion-group">
 	            <div class="accordion-heading">
@@ -556,6 +556,32 @@
            {% endfor %}	
 
 
+
+
+
+<!-- 
+		  {% for item in view.all_category %}
+		  
+               <div class="accordion-group">
+	            <div class="accordion-heading">
+	                <a href="{{ item.get_absolute_url }}" data-toggle="" class="accordion-toggle collapsed">
+	                   {{ item.name }}
+	                </a>
+	            </div>
+	            <div class="accordion-body collapse" id="collapseOne" style="height: 0px;">
+	                <div class="accordion-inner">
+	                    <ul>
+	                        <li><a href="#">gaming</a></li>
+	                        <li><a href="#">office</a></li>
+	                        <li><a href="#">kids</a></li>
+	                        <li><a href="#">for women</a></li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+
+
+           {% endfor %}	 -->
 
 
 

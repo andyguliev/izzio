@@ -40,7 +40,7 @@ class Maincategory(models.Model):
         return self.name
 
     def get_absolute_url(self):
-        return reverse('maincategory', args=[str(self.id)])
+        return reverse('main_catalog_detail', args=[str(self.id)])
 
 
 
