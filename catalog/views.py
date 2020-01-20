@@ -55,9 +55,7 @@ class GoodDetail(DetailView):
     model = Good
     template_name = "base_detail.html"
 
-    @staticmethod
-    def all_goods():
-        return Good.objects.all()
+   
 
     @staticmethod
     def all_maincat():

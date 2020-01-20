@@ -14,26 +14,35 @@ class People(models.Model):
 
 
 
-class Maincategory(models.Model):
-    name = models.CharField(max_length=200)
 
-    def __str__(self):
-        return self.name
-
-    def get_absolute_url(self):
-        return reverse('Maincategory', args=[str(self.id)])
 
 
 
 
 class Category(models.Model):
     name = models.CharField(max_length=200)
-
+    
     def __str__(self):
         return self.name
 
     def get_absolute_url(self):
         return reverse('catalog_detail', args=[str(self.id)])
+
+
+
+
+class Maincategory(models.Model):
+    name = models.CharField(max_length=200)
+    category = models.ManyToManyField(Category)
+
+
+    def __str__(self):
+        return self.name
+
+    def get_absolute_url(self):
+        return reverse('maincategory', args=[str(self.id)])
+
+
 
 
 
